@@ -1,0 +1,49 @@
+body {
+    background-color: rgba(169, 169, 169, 0.507);
+   
+}
+.main-header{
+    background-image: url(img/headerbackground4.avif);
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    display: flex;
+
+}
+.profile-pic{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    padding: 20px;
+    
+}
+h1{
+    font-family:Cambria;
+    font-weight: bold;
+    font-size: 2.5em;
+    margin-top: 40px;
+}
+
+ul{
+    font-family: 'Lucida Sans';
+    font-size: larger;
+    padding : 10px;
+    margin-left: 60px;
+    margin-bottom: 100px;
+    
+}
+.footer {
+    background-color: rgba(128, 128, 128, 0.575);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__addr {
+    margin:0 ;
+   
+}
+.validator {
+    margin-right: 40px;
+  
+}
