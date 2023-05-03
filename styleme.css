@@ -1,14 +1,14 @@
 
 h1,h3 {
-    color: rgba(0, 0, 255, 0.722);
-    font-family: Verdana;
+    color:darkblue;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 em{
-    color:yellow
+    color:brown
 }
 
 body{
-    background-color: rgba(128, 128, 128, 0.778);
+    background-color: rgba(128, 128, 128, 0.466);
 }
 a {
     text-decoration: none;
@@ -23,6 +23,7 @@ p::first-letter {
     font-weight: bold;
 }
 dl {
+    margin-left: 40px;
     margin-bottom: 10px;
 }
 
@@ -41,6 +42,23 @@ dd {
     font-style: italic;
 
 }
+
+#top-movies {
+    display: flex;
+    flex-direction: column-reverse;
+    list-style-type: none;
+    padding-left: 40px;
+}
+
+#top-movies li {
+    counter-increment: item;
+    margin-bottom: 10px;
+}
+
+#top-movies li::before {
+    content: counter(item) ". ";
+}
+
 .footer {
     background-color: rgba(128, 128, 128, 0.575);
     padding: 20px;
