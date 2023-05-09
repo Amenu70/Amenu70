@@ -1,0 +1,61 @@
+Question 1.
+
+Code Snippet 1 :
+
+X is not referenced to anything
+
+
+Code Snippet 2:
+
+
+In the web browser 8125 will be printed
+
+
+Code Snippet 3 :
+
+
+We will have an alert of 10 in the web browser
+
+
+
+Question 2.
+
+Code snippet one
+
+   Global Creation LE { outer: null, a=undefined, b=undefined c= undefined }
+
+   Global  Execution LE {outer: null, a=5, b=10 c= function }
+
+   Function  C creation LE{ outer: global, f: undefined , x=undefined ,arguments{0="8",1="9",2= "10" length =3}  a=8 b=9 c=10  }
+
+   Function C execution LE{ outer: global, f: function, x=10, arguments{0="8",1="9",2= "10" length =3} a=8 b=9 c=10 }
+
+   Function F creation  LE{ outer: C,x=undefined ,arguments{0="8",1="9",2= "10" length =3}  a=8 b=9 c=10 }
+
+   Function F execution  LE{outer: C , x=5 ,arguments{0="8",1="9",2= "10" length =3}  a=8 b=8(later changes to 10) c=10 }
+
+
+
+Code snippet 2
+
+   Global Creation LE { outer: null, x= undefined myfunction: function }
+
+   Global  Execution LE {outer: null, x= 9(later changes to 5) myfunction: function }
+
+   Function  myfunction creation LE{outer: global , arguments{ length =0}  }
+
+   Function  myfunction execution LE{outer: global, arguments{ length =0}  }
+
+   (In the first call of the function x=9 is used and in the second call x=5 will be used)
+
+
+
+Code snippet 3
+
+   Global Creation LE { outer: null, foo= undefined bar: function }
+
+   Global  Execution LE {outer: null, foo=1 bar: function }
+
+   Function  bar creation LE{outer: global , foo: undefined arguments{ length =0}  }
+
+   Function  bar execution LE{outer: global, foo=10 arguments{ length =0}  }
