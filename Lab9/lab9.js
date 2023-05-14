@@ -22,46 +22,20 @@ class Question {
 
 class Quiz {
     constructor(questions, students) {
-        this.questions = new Map();
+        this.questions = questions;
         this.students = students;
-
-        for (const question of questions) {
-            this.questions.set(question.qid, question.answer);
-        }
     }
-
-    scoreStudentBySid(sid) {
-        const student = this.students.find((s) => s.studentId === sid);
-        if (!student) {
-            console.log("Student not found!");
-            return;
-        }
-
-        let score = 0;
-        for (const answer of student.answers) {
-            const questionId = answer.qid;
-            const studentAnswer = answer.answer;
-
-            if (this.questions.has(questionId)) {
-                const correctAnswer = this.questions.get(questionId);
-                if (correctAnswer === studentAnswer) {
-                    score++;
-                }
-            }
-        }
-
-        return score;
+    scoreStudentBySid(sId) {
+        let student = students.find(student => student.studentId == sId);
+        return (student.answers.filter(a => {
+            let currentQuestion = questions.find(q => q.qid == a.qid)
+            return currentQuestion.checkAnswer(a.answer)
+        }).length);
     }
-
     getAverageScore() {
-        let totalScore = 0;
-        for (const student of this.students) {
-            const score = this.scoreStudentBySid(student.studentId);
-            totalScore += score;
-        }
-
-        return this.students.length > 0 ? totalScore / this.students.length : 0;
+        return students.map(s => this.scoreStudentBySid(s.studentId)).reduce((sum, current) => sum + current, 0) / students.length;
     }
+
 }
 
 // Usage example
@@ -85,10 +59,10 @@ const questions = [
 const quiz = new Quiz(questions, students);
 
 let scoreforStudent10 = quiz.scoreStudentBySid(10);
-console.log(scoreforStudent10); // Expected Result: 3
+console.log(scoreforStudent10);
 
 let scoreforStudent11 = quiz.scoreStudentBySid(11);
-console.log(scoreforStudent11); // Expected Result: 2
+console.log(scoreforStudent11); 
 
 let average = quiz.getAverageScore();
 console.log(average);
