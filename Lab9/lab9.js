@@ -62,7 +62,7 @@ let scoreforStudent10 = quiz.scoreStudentBySid(10);
 console.log(scoreforStudent10);
 
 let scoreforStudent11 = quiz.scoreStudentBySid(11);
-console.log(scoreforStudent11); 
+console.log(scoreforStudent11);
 
 let average = quiz.getAverageScore();
 console.log(average);
